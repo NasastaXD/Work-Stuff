@@ -6,19 +6,11 @@ Raza:
 Muerte: 
 Afiliación: 
 Grupo: 
+Dominio: 
+Gracia: 
+Familia: 
 Histórico: false
 NoteIcon: npc
-Sistema: 
-Afinidad: 
-Padre: 
-Madre: 
-Familia: 
-fc-calendar: Calendario
-fc-date: 
-aat-render-enabled: false
-timelines:
-  - cronología magna
-fc-event-body: Nacimiento del personaje.
 ---
 
 > [!infobox]
@@ -31,14 +23,13 @@ fc-event-body: Nacimiento del personaje.
 > Título | `=this["Título"]` |
 > Alias | `=this["Alias"]` |
 > Raza | `=this["Raza"]` |
-> Nacimiento | `=this["fc-date"]` |
 > Muerte | `=this["Muerte"]` |
 > Afiliación | `=this["Afiliación"]` |
 > ###### [[Hierométrica]]
 > Campo |  Valor |
 > ---|---|
-> Sistema | `=this["Sistema"]` |
-> Afinidad | `=this["Afinidad"]` |
+> Dominio | `=this["Dominio"]` |
+> Gracia | `=this["Gracia"]` |
 
 # `=this.file.name`
 
@@ -49,5 +40,21 @@ fc-event-body: Nacimiento del personaje.
 ## Historia
 
 ## Citas
+
+## Estadísticas
+<!-- Para ajustar al personaje, cambia SOLO los 5 números de la línea "data" (escala 0–20). -->
+```chart
+type: radar
+labels: [Physical Capability, Intelligence, Creativity, Adaptability, Endurance]
+series:
+  - title: Stats
+    data: [10, 10, 10, 10, 10]
+width: 60%
+fill: true
+labelColors: true
+beginAtZero: true
+yMin: 0
+yMax: 20
+```
 
 ## Notas
