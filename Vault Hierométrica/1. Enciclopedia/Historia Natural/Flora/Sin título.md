@@ -1,10 +1,9 @@
 ---
 Dominio: 
 Clasificación: 
-EspecieProgenitora: 
-Estado: 
-ClaseAmenaza: 
-EsperanzaVida: 
+Origen: 
+Amenaza: 
+Cualidades: 
 NombresAlternativos: 
 ---
 > [!infobox]
@@ -16,10 +15,9 @@ NombresAlternativos:
 > ---|---|
 > Dominio | `=this["Dominio"]` |
 > Nombres Comunes | `=this["NombresAlternativos"]` |
-> Especie Progenitora | `=this["EspecieProgenitora"]` |
-> Clase de Amenaza | `=this["ClaseAmenaza"]` |
-> Esperanza de Vida | `=this["EsperanzaVida"]` |
-> Estado | `=this["Estado"]` |
+> Origen | `=this["Origen"]` |
+> Amenaza | `=this["Amenaza"]` |
+> Cualidades | `=this["Cualidades"]` |
 
 # `=this.file.name`
 

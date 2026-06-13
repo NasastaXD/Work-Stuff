@@ -1,6 +1,6 @@
 ---
-UbicaciónSuperior: 
-NombresAlternativos: 
+Tipo: 
+Importancia: 
 InfluenciaDominante: 
 InfluenciasSecundarias: 
 ---
@@ -10,8 +10,8 @@ InfluenciasSecundarias:
 > ###### Información Básica
 > Campo |  Valor |
 > ---|---|
-> Nombres Alternativos | `=this["NombresAlternativos"]` |
-> Ubicación Superior | `=this["UbicaciónSuperior"]` |
+> Tipo | `=this["Tipo"]` |
+> Importancia | `=this["Importancia"]` |
 > Influencia Dominante | `=this["InfluenciaDominante"]` |
 > Influencias Secundarias | `=this["InfluenciasSecundarias"]` |
 

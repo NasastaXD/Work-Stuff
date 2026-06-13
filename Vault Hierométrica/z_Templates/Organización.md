@@ -2,11 +2,11 @@
 Tipo: 
 Lema: 
 Líder: 
-OrganizaciónSuperior: 
-NombresAlternativos: 
-FechaFundación: 
-NivelInfluencia: 
-PoderMilitar: 
+miembros: 
+Ideología: 
+Motivo: 
+Influencia: 
+Poder: 
 NivelRiqueza: 
 fc-calendar: Calendario
 fc-date: 
@@ -24,12 +24,13 @@ Disolución:
 > ###### Información Básica
 > Campo |  Valor |
 > ---|---|
-> Nombres Alternativos | `=this["NombresAlternativos"]` |
-> Líder | `=this["Líder"]` |
-> Organización Superior |  `=this["OrganizaciónSuperior"]` |
 > Tipo | `=this["Tipo"]` |
-> Fecha de Fundación | `=this["FechaFundación"]` |
-> Disolución | `=this["Disolución"]` |
+> Ideología | `=this["Ideología"]` |
+> Líder | `=this["Líder"]` |
+> Miembros destacados |  `=this["miembros"]` |
+> Motivo de Fundación | `=this["Motivo"]` |
+> Poder | `=this["Poder"]` |
+> Influencia | `=this["Influencia"]` |
 
 # `=this.file.name`
 

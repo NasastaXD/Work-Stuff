@@ -30,6 +30,8 @@ fc-event-body:
 
 ## Historia
 
+## Importancia
+
 ## Citas
 
 ## Notas

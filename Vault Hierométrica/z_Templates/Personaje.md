@@ -1,13 +1,13 @@
 ---
-Sobrenombre: 
+descripción: 
 Título: 
 Alias: 
 Raza: 
 Muerte: 
 Afiliación: 
 Grupo: 
-Dominio: 
 Gracia: 
+Dominio: 
 Familia: 
 Histórico: false
 NoteIcon: npc
@@ -15,7 +15,7 @@ NoteIcon: npc
 
 > [!infobox]
 > # `=this.file.name`
-> # <font size=3>*`=this["Sobrenombre"]`*</font>
+> # <font size=3>*`=this["descripción"]`*</font>
 > ![[z_Assets/Misc/ImagePlaceholder.webp|cover hsmall]]
 > ###### Información Básica
 > Campo |  Valor |
@@ -42,7 +42,7 @@ NoteIcon: npc
 ## Citas
 
 ## Estadísticas
-<!-- Para ajustar al personaje, cambia SOLO los 5 números de la línea "data" (escala 0–20). -->
+<!-- Cambia SOLO los 5 números de la línea "data" (escala 0–20). -->
 ```chart
 type: radar
 labels: [Physical Capability, Intelligence, Creativity, Adaptability, Endurance]
@@ -57,4 +57,4 @@ yMin: 0
 yMax: 20
 ```
 
-## Notas
+## Gracia & Stuff

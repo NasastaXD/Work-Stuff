@@ -20,6 +20,14 @@ El vault traducido está en la carpeta **`Vault Hierométrica/`**. El zip origin
 4. **Líneas de tiempo (Timelines)**: se tradujeron de forma consistente — `grand timeline` → `cronología magna`, `main timeline` → `cronología principal` — tanto en el frontmatter como en los bloques `aat-vertical`.
 5. **Prompts de Copilot** (`copilot/`): se dejaron en inglés porque son comandos del plugin de IA, no contenido de worldbuilding.
 
+## Cambios v1.1 (tras tus ediciones)
+
+- Se adoptaron tus plantillas editadas como base y se arreglaron las que habían quedado rotas (Conflicto sin cerrar frontmatter, refs cruzadas en Personaje/Objeto/Especie).
+- **Personaje**: stat card embebido (gráfico radar, escala 0–20) con 5 stats — Physical Capability, Intelligence, Creativity, Adaptability, Endurance. Para ajustar un personaje se cambian solo los 5 números de la línea `data`. Se quitó el bloque de calendario (la fecha de nacimiento no es relevante).
+- **Verdad → Axioma** (plantilla, botón y enlaces).
+- Eliminadas las secciones **Asentamiento**, **Documento** y **Material** (plantillas, carpetas, ejemplos y botones).
+- País, Organización, Región, Religión simplificados según tus campos.
+
 ## Cómo usarlo
 
 Abre la carpeta `Vault Hierométrica/` como vault en Obsidian (o copia su contenido dentro de tu vault actual). Necesitarás los plugins: Dataview, Templater, Meta Bind, Calendarium, Timelines (AAT), Leaflet, Charts, Banners y Excalidraw.

@@ -2,12 +2,9 @@
 Gobierno: 
 Lema: 
 Líder: 
-OrganizaciónSuperior: 
-NombresAlternativos: 
-FechaFundación: 
-NivelInfluencia: 
-PoderMilitar: 
-NivelRiqueza: 
+Influencia: 
+Ideología: 
+Poder: 
 Capital: 
 fc-calendar: Calendario
 fc-date: 
@@ -15,9 +12,6 @@ aat-render-enabled: false
 timelines:
   - cronología magna
 fc-event-body: Fundación del país.
-Disolución: 
-Gentilicio: 
-Fundadores: 
 ---
 
 > [!infobox]
@@ -27,13 +21,12 @@ Fundadores:
 > ###### Información Básica
 > Campo |  Valor |
 > ---|---|
-> Nombres Alternativos | `=this["NombresAlternativos"]` |
-> Capital | `=this["Capital"]` |
 > Líder | `=this["Líder"]` |
-> Organización Superior |  `=this["OrganizaciónSuperior"]` |
+> Capital | `=this["Capital"]` |
+> Poder Militar | `=this["Poder"]` |
 > Gobierno | `=this["Gobierno"]` |
-> Fecha de Fundación | `=this["FechaFundación"]` |
-> Gentilicio | `=this["Gentilicio"]` |
+> Influencia Narrativa | `=this["Influencia"]` |
+> Ideología | `=this["Ideología"]` |
 
 # `=this.file.name`
 
@@ -45,8 +38,6 @@ Fundadores:
 
 ## Diplomacia y Relaciones Exteriores
 
-## Demografía y Población
-
 ## Fuerzas Militares
 
 ## Organizaciones y Facciones
@@ -54,11 +45,5 @@ Fundadores:
 ## Religión
 
 ## Tecnología e Infraestructura
-
-## Economía y Comercio
-
-### Importaciones
-
-### Exportaciones
 
 ## Notas

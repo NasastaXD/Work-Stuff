@@ -1,16 +1,16 @@
 ---
-Apodo: 
+Nombre: 
 Ubicación: 
 fc-calendar: Calendario
 fc-date: 
 aat-render-enabled: false
 timelines:
   - cronología magna
-fc-event-body: Conflicto.
+fc-event-body: Batalla de ejemplo.
 ---
 > [!infobox]
 > # `=this.file.name`
-> # <font size=3>*`=this["Apodo"]`*</font>
+> # <font size=3>*`=this["Nombre"]`*</font>
 > ![[z_Assets/Misc/ImagePlaceholder.webp|cover hsmall]]
 > ###### Información Básica
 > Campo |  Valor |

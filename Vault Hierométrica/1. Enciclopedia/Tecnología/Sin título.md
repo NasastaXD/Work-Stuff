@@ -1,9 +1,8 @@
 ---
-Subtítulo: 
+Alias: 
 NombresAlternativos: 
 Valor: 
 Clasificación: 
-Peso: 
 Tamaño: 
 fc-date: 
 FechaDestrucción: 
@@ -15,7 +14,7 @@ fc-event-body: El objeto fue creado o inventado.
 ---
 > [!infobox]
 > # `=this.file.name`
-> # <font size=3>*`=this["Subtítulo"]`*</font>
+> # <font size=3>*`=this["Alias"]`*</font>
 > ![[z_Assets/Misc/ImagePlaceholder.webp|cover hsmall]]
 > ###### Información Básica
 > Campo |  Valor |
@@ -24,7 +23,6 @@ fc-event-body: El objeto fue creado o inventado.
 > Clasificación | `=this["Clasificación"]` |
 > Valor | `=this["Valor"]` |
 > Tamaño | `=this["Tamaño"]` |
-> Peso | `=this["Peso"]` |
 > Fecha de Creación | `=this["fc-date"]` |
 > Fecha de Destrucción | `=this["FechaDestrucción"]` |
 
@@ -34,7 +32,7 @@ fc-event-body: El objeto fue creado o inventado.
 
 ## Relevancia
 
-## Proceso de Fabricación
+## Origen
 
 ## Historia
 
