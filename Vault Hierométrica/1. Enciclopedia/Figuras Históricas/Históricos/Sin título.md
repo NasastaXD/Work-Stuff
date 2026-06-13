@@ -42,17 +42,32 @@ NoteIcon: npc
 ## Citas
 
 ## Estadísticas
-<!-- Cambia SOLO los 5 números de "data" (escala 0–20). Requiere Dataview con "Enable JavaScript Queries". -->
+<!-- Requiere Dataview con "Enable JavaScript Queries". Cambia los valores en "data" y los colores comentados abajo. -->
 ```dataviewjs
 const cfg = {
   type: "radar",
   data: {
-    labels: ["Physical Capability","Intelligence","Fast Thinking","Adaptability","Durability"],
-    datasets: [{ label: "Stats", data: [10,10,10,10,10], fill: true }]
+    labels: ["Physical Capability","Intelligence","Fast Thinking","Adaptability","Durability"], // nombres de los ejes
+    datasets: [{
+      label: "Stats",
+      data: [10,10,10,10,10],                       // <-- los 5 valores (0 a 20)
+      fill: true,
+      backgroundColor: "rgba(163,113,247,0.35)",     // relleno (último número = opacidad 0–1)
+      borderColor: "#a371f7",                         // color de la línea
+      borderWidth: 2,
+      pointBackgroundColor: "#a371f7",                // color de los puntos
+      pointRadius: 3
+    }]
   },
   options: {
-    scales: { r: { min: 0, max: 20, ticks: { display: false } } },
-    plugins: { legend: { display: false } }
+    scales: { r: {
+      min: 0, max: 20,                                // <-- tope de la escala
+      ticks: { display: false },                      // números ocultos
+      grid: { color: "rgba(255,255,255,0.15)" },      // color de la telaraña
+      angleLines: { color: "rgba(255,255,255,0.15)" },// líneas radiales
+      pointLabels: { color: "#e0e0e0", font: { size: 13 } } // color y tamaño de los nombres
+    }},
+    plugins: { legend: { display: false } }           // leyenda oculta
   }
 };
 window.renderChart(cfg, this.container);
