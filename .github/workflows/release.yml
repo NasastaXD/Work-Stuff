@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "Nombre del tag para el release (ej: v1.0.0)"
+        required: true
+        default: "v1.0.0"
 
 permissions:
   contents: write
@@ -22,7 +28,8 @@ jobs:
       - name: Publicar release con zip
         uses: softprops/action-gh-release@v2
         with:
-          name: "Vault Hierométrica ${{ github.ref_name }}"
+          name: "Vault Hierométrica ${{ github.event.inputs.tag_name || github.ref_name }}"
+          tag_name: "${{ github.event.inputs.tag_name || github.ref_name }}"
           body: |
             ## Vault Hierométrica — Obsidian Worldbuilding
 
