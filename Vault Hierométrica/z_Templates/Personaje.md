@@ -42,19 +42,20 @@ NoteIcon: npc
 ## Citas
 
 ## Estadísticas
-<!-- Cambia SOLO los 5 números de la línea "data" (escala 0–20). -->
-```chart
-type: radar
-labels: [Physical Capability, Intelligence, Creativity, Adaptability, Endurance]
-series:
-  - title: Stats
-    data: [10, 10, 10, 10, 10]
-width: 60%
-fill: true
-labelColors: true
-beginAtZero: true
-yMin: 0
-yMax: 20
+<!-- Cambia SOLO los 5 números de "data" (escala 0–20). Requiere Dataview con "Enable JavaScript Queries". -->
+```dataviewjs
+const cfg = {
+  type: "radar",
+  data: {
+    labels: ["Physical Capability","Intelligence","Fast Thinking","Adaptability","Durability"],
+    datasets: [{ label: "Stats", data: [10,10,10,10,10], fill: true }]
+  },
+  options: {
+    scales: { r: { min: 0, max: 20, ticks: { display: false } } },
+    plugins: { legend: { display: false } }
+  }
+};
+window.renderChart(cfg, this.container);
 ```
 
 ## Gracia & Stuff
