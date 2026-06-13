@@ -6,15 +6,7 @@ fc-date:
 aat-render-enabled: false
 timelines:
   - cronología magna
-fc-event-body: Batalla de ejemplo.
-Atacante: 
-FuerzasAtacante: 
-BajasAtacante: 
-MandoAtacante: 
-Defensor: 
-FuerzasDefensor: 
-BajasDefensor: 
-MandoDefensor: 
+fc-event-body: Conflicto.
 ---
 > [!infobox]
 > # `=this.file.name`
@@ -25,13 +17,6 @@ MandoDefensor:
 > ---|---|
 > Fecha | `=this["fc-date"]` |
 > Ubicación | `=this["Ubicación"]` |
-> ###### Contendientes
-> Campo |  Valor |Campo |  Valor |
-> ---|---|---|---|
-> Atacante | `=this["Atacante"]` |Defensor | `=this["Defensor"]` |
-> Mando | `=this["MandoAtacante"]` |Mando | `=this["MandoDefensor"]` |
-> Fuerzas | `=this["FuerzasAtacante"]` |Fuerzas | `=this["FuerzasDefensor"]` |
-> Bajas | `=this["BajasAtacante"]` |Bajas | `=this["BajasDefensor"]` |
 
 # `=this.file.name`
 
