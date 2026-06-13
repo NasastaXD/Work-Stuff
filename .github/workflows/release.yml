@@ -1,0 +1,42 @@
+name: Publicar Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Crear zip del Vault
+        run: |
+          zip -r "Vault-Hierometrica.zip" "Vault Hierométrica/"
+
+      - name: Publicar release con zip
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Vault Hierométrica ${{ github.ref_name }}"
+          body: |
+            ## Vault Hierométrica — Obsidian Worldbuilding
+
+            Template de worldbuilding para Obsidian, traducida al español y adaptada al sistema de magia **Hierométrica**.
+
+            ### Cómo usar
+            Descarga `Vault-Hierometrica.zip`, descomprímelo y ábrelo como vault en Obsidian.
+
+            ### Contenido
+            - Panel de inicio con botones de creación rápida
+            - 19 plantillas traducidas: Personaje, Ficha, Conflicto, País, Organización, Evento, Documento, Familia, Asentamiento, Región, Lugar Emblemático, Especie, Material, Objeto, Deidad, Religión, Verdad, Genérico, Ficha de Estadísticas
+            - Sistema de magia: **Hierométrica** integrado en personajes, fichas y especies
+            - Secciones: Figuras Históricas, Historia, Atlas, Geopolítica, Historia Natural, Religión, Tecnología, Prosa
+            - Mapa interactivo (plugin Leaflet) y cronología (Calendarium)
+          files: Vault-Hierometrica.zip
+          draft: false
+          prerelease: false
