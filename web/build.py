@@ -25,6 +25,20 @@ OUT = ROOT / "web" / "_site"
 
 SITE_TITLE = "Códice de Hierométrica"
 
+# Stats del radar leídas del frontmatter (clave -> etiqueta visible).
+# Si la nota tiene estas claves, el gráfico se arma desde ellas (editable
+# desde el panel de Propiedades de Obsidian, sin tocar código).
+STAT_KEYS = [
+    ("PhysicalCapability", "Physical Capability"),
+    ("Intelligence", "Intelligence"),
+    ("FastThinking", "Fast Thinking"),
+    ("Adaptability", "Adaptability"),
+    ("Durability", "Durability"),
+]
+
+# Imágenes disponibles en el repo (se completa en main())
+AVAILABLE_IMAGES = set()
+
 # Carpetas que no son contenido del códice
 EXCLUDE_DIRS = {"z_Templates", "z_Assets", "copilot", "Excalidraw", ".obsidian"}
 # Archivos sueltos a omitir
@@ -248,15 +262,27 @@ def extract_charts(body: str, note: Note):
 
     def dvjs_repl(m):
         block = m.group(1)
-        labels = re.search(r"labels:\s*(\[[^\]]*\])", block)
-        data = re.search(r"data:\s*(\[[^\]]*\])", block)
-        if not (labels and data):
-            return ""
-        try:
-            lbls = json.loads(labels.group(1))
-            dta = json.loads(data.group(1))
-        except json.JSONDecodeError:
-            return ""
+        # 1) Preferir stats del frontmatter (fuente única, editable en Propiedades)
+        fm_vals = [note.frontmatter.get(k) for k, _ in STAT_KEYS]
+        if any(v is not None for v in fm_vals):
+            lbls = [lbl for _, lbl in STAT_KEYS]
+            dta = []
+            for v in fm_vals:
+                try:
+                    dta.append(float(v))
+                except (TypeError, ValueError):
+                    dta.append(0)
+        else:
+            # 2) Si no, parsear los arrays literales del bloque
+            labels = re.search(r"labels:\s*(\[[^\]]*\])", block)
+            data = re.search(r"data:\s*(\[[^\]]*\])", block)
+            if not (labels and data):
+                return ""
+            try:
+                lbls = json.loads(labels.group(1))
+                dta = json.loads(data.group(1))
+            except json.JSONDecodeError:
+                return ""
         idx = len(charts)
         charts.append({"type": "radar", "labels": lbls,
                        "datasets": [{"label": "Stats", "data": dta}], "fill": True})
@@ -382,8 +408,12 @@ def render_infobox_html(ib):
     parts.append(f'<div class="ib-title">{ib["title"]}</div>')
     if ib.get("subtitle"):
         parts.append(f'<div class="ib-subtitle">{ib["subtitle"]}</div>')
-    if ib.get("image"):
-        parts.append(f'<div class="ib-image"><img src="assets/vault/{ib["image"]}" alt=""></div>')
+    img = ib.get("image")
+    if img and img not in AVAILABLE_IMAGES:
+        # imagen referenciada pero ausente del repo: usar el placeholder
+        img = "ImagePlaceholder.webp" if "ImagePlaceholder.webp" in AVAILABLE_IMAGES else None
+    if img:
+        parts.append(f'<div class="ib-image"><img src="assets/vault/{img}" alt=""></div>')
     for sec in ib["sections"]:
         if sec["name"]:
             parts.append(f'<div class="ib-section">{sec["name"]}</div>')
@@ -459,6 +489,13 @@ def main():
     assets = OUT / "assets"
     assets.mkdir()
     (assets / "vault").mkdir()
+
+    # imágenes disponibles en el vault (para el fallback del infobox)
+    vault_assets = VAULT / "z_Assets"
+    if vault_assets.exists():
+        for img in vault_assets.rglob("*"):
+            if img.suffix.lower() in {".webp", ".png", ".jpg", ".jpeg", ".gif", ".svg"}:
+                AVAILABLE_IMAGES.add(img.name)
 
     notes = collect_notes()
     name_index = {n.name.lower(): n.slug for n in notes}
