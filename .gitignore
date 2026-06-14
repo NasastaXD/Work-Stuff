@@ -1,0 +1,7 @@
+# Salida generada del sitio web (se reconstruye en CI)
+web/_site/
+
+# Artefactos de Python
+__pycache__/
+*.pyc
+.venv/
