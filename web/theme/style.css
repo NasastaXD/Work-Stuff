@@ -94,7 +94,7 @@ main{margin-left:var(--sidebar-w);padding:40px 48px;max-width:1100px}
 .ib-title{font-size:1.3em;font-weight:700;text-align:center}
 .ib-subtitle{text-align:center;color:var(--muted);font-style:italic;font-size:.92em;margin-top:2px}
 .ib-image{margin:14px 0}
-.ib-image img{width:100%;border-radius:8px;display:block;background:var(--panel-2)}
+.ib-image img{width:100%;max-height:340px;object-fit:cover;object-position:center top;border-radius:8px;display:block;background:var(--panel-2)}
 .ib-section{
   color:var(--accent);font-weight:700;font-size:.74em;text-transform:uppercase;
   letter-spacing:.6px;margin:16px 0 6px;border-bottom:1px solid var(--border);padding-bottom:4px;
